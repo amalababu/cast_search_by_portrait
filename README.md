@@ -94,8 +94,8 @@ Run `demo.py` to see an example result of a cast with its top 6 ranked images by
 python3 demo.py --movcast ${MOVIE_ID}_${CAST_ID}
 ```
 ## Sample Result Images
-![demo1](https://github.com/amalababu/cast_search_by_portrait/tree/master/demo/demo1.jpeg)
-![demo2](https://github.com/amalababu/cast_search_by_portrait/tree/master/demo/demo2.jpeg)
+![demo1](demo/demo1.jpeg)
+![demo2](tree/master/demo/demo2.jpeg)
 # Github projects
 
 - baseline code from [cast_search_by_portrait](https://github.com/rogeryang12/cast_search_by_portrait) 
