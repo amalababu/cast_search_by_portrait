@@ -95,7 +95,7 @@ python3 demo.py --movcast ${MOVIE_ID}_${CAST_ID}
 ```
 ## Sample Result Images
 ![demo1](demo/demo1.jpeg)
-![demo2](tree/master/demo/demo2.jpeg)
+![demo2](demo/demo2.jpeg)
 # Github projects
 
 - baseline code from [cast_search_by_portrait](https://github.com/rogeryang12/cast_search_by_portrait) 
