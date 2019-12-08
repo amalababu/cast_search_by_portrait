@@ -197,7 +197,14 @@ class TestImage(Dataset):
         self.dataset = {}
         self.files = []
         for movie in sorted(data.keys()):
+        # movie=sorted(data.keys())[0]
             num = len(self.files)
+            # cast = data[movie]['cast']
+            # candi = data[movie]['candidates']
+            # list_cast_candi = []
+            # list_cast_candi.extend(cast)
+            # list_cast_candi.extend(candi)
+            # files = [item['file'] for item in list_cast_candi]
             files = [item['file'] for item in data[movie]['candidates']]
             self.files.extend(files)
             self.dataset[movie] = [num, len(self.files)]

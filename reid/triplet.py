@@ -15,7 +15,7 @@ parser.add_argument('--width', default=128, type=int)
 
 parser.add_argument('--image_root', default='/data4/lixz/wider/body')
 parser.add_argument('--pkl_file', default='../data/body_train.pkl')
-parser.add_argument('--batch_size', default=18, type=int)
+parser.add_argument('--batch_size', default=1, type=int)
 parser.add_argument('--image_num', default=4, type=int)
 parser.add_argument('--use_val', default=False, action='store_true')
 
@@ -38,7 +38,7 @@ parser.add_argument('--num_gpu', default=torch.cuda.device_count())
 parser.add_argument('--eval', default=False, action='store_true')
 
 parser.add_argument('--checkpoint', default='model450.pkl')
-parser.add_argument('--test_batch_size', default=256, type=int)
+parser.add_argument('--test_batch_size', default=1, type=int)
 parser.add_argument('--test_root', default='/data4/lixz/wider/body/')
 parser.add_argument('--mode', default='val')
 args = parser.parse_args()
@@ -53,7 +53,7 @@ def train():
 
     transform = get_transform((args.height, args.width), 0.5, 10, (args.height, args.width), True, True)
     dataset = TrainKBatch(args.image_root, args.pkl_file, transform, args.image_num, args.use_val)
-    model = CNN(num_classes=len(dataset.pids), cnn=args.cnn, ckpt=args.ckpt, stride=args.stride)
+    model = CNN(num_classes=len(dataset.pids), cnn=args.cnn, stride=args.stride)
     optimizer = optim.Adam(model.parameters(), args.lr, weight_decay=args.weight_decay)
     scheduler = optim.lr_scheduler.StepLR(optimizer, args.lr_decay_epoch, args.gamma)
     celoss = CrossEntropyLoss()

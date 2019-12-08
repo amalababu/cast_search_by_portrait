@@ -8,7 +8,7 @@ from tqdm import tqdm
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', default='test')
 parser.add_argument('--gpu', default=0, type=int, help='gpu id')
-parser.add_argument('--num', default=30, type=int)
+parser.add_argument('--num', default=5, type=int)
 args = parser.parse_args()
 
 

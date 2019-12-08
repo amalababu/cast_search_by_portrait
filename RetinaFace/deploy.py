@@ -17,7 +17,8 @@ args = parser.parse_args()
 os.environ['MXNET_CUDNN_AUTOTUNE_DEFAULT'] = '0'
 thresh = 0.8
 
-TEST_SCALES = [500, 800, 1100, 1400, 1700]
+# TEST_SCALES = [500, 800, 1100, 1400, 1700]
+TEST_SCALES = [500, 800]
 target_size = 800
 max_size = 1200
 

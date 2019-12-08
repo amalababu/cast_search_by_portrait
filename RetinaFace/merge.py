@@ -20,6 +20,8 @@ with open('results/{}_cast.pkl'.format(mode), 'rb') as f:
     cast_data = pickle.load(f)
 
 for movie in tqdm(origin.keys()):
+    if not os.path.isfile('results/{}_{}.pkl'.format(mode, movie)):
+        continue
     dataset[movie] = {'cast': [], 'candidates': []}
     with open('results/{}_{}.pkl'.format(mode, movie), 'rb') as f:
         data = pickle.load(f)
